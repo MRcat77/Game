@@ -1,17 +1,30 @@
-/* Error: expected "{".
- *   ,
- * 6 | .Column 
- *   |         ^
- *   '
- *   style.scss 6:9  root stylesheet */
+/*
+  singe use
+    1.1 Main Game
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a   \2577 \a 6 \2502  .Column \a   \2502          ^\a   \2575 \a   style.scss 6:9  root stylesheet';
+
+
+
+
+
+*/
+#game {
+  display: flex;
+  flex-direction: column;
+  background-color: lime;
+  align-items: center;
 }
+
+#record {
+  background-color: gray;
+  border-radius: 1000rem;
+  width: 50rem;
+  height: 50rem;
+  margin: 10rem;
+}
+
+#counter {
+  content: none;
+}
+
+/*# sourceMappingURL=style.css.map */

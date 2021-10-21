@@ -1,5 +1,16 @@
-let column = 0, row = 0;
+let Notes = 0
 
-for(let i = 0, i < 25 * 25){
-    function
+function Point()
+{
+    Notes++
+    console.log(Notes)
+    document.querySelector("#counter").textContent = Notes;
+
+
+
+
+
+
+
+
 }

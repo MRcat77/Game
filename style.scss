@@ -1,6 +1,34 @@
+/*
+  singe use
+    1.1 Main Game
 
 
 
 
 
-.Column
+
+*/
+
+// 1.1 Main Game
+
+#game
+{
+  display: flex;
+  flex-direction: column;
+  background-color: lime;
+  align-items: center;
+}
+
+#record
+{
+  background-color: gray;
+  border-radius: 1000rem;
+  width: 50rem;
+  height: 50rem;
+  margin: 10rem;
+}
+
+#counter
+{
+  content: none;
+}
