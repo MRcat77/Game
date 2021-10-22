@@ -1,16 +1,15 @@
-let Notes = 0
+let notes = localStorage['score'] || '0';
+document.querySelector("#counter").textContent = notes;
 
 function Point()
 {
-    Notes++
-    console.log(Notes)
-    document.querySelector("#counter").textContent = Notes;
+    notes++
+    localStorage['score'] = notes; // only strings
+    console.log(notes)
+    document.querySelector("#counter").textContent = notes;
+}
 
-
-
-
-
-
-
-
+function Beat()
+{
+    document.querySelector("#beat").style.opacity = "1";
 }

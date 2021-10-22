@@ -1,7 +1,7 @@
 /*
   singe use
     1.1 Main Game
-
+    1.2 Beat bar
 
 
 
@@ -13,18 +13,46 @@
   flex-direction: column;
   background-color: lime;
   align-items: center;
+  padding: 4rem;
 }
 
 #record {
   background-color: gray;
   border-radius: 1000rem;
-  width: 50rem;
-  height: 50rem;
-  margin: 10rem;
+  width: 40rem;
+  height: 40rem;
+  margin: 5rem;
 }
 
 #counter {
   content: none;
+}
+
+#bar {
+  display: flex;
+  background: gray;
+  width: 75rem;
+  height: 5rem;
+}
+
+#center_beat {
+  background: yellow;
+  width: 4vw;
+  height: 8rem;
+  align-self: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#beat {
+  background: red;
+  width: 2rem;
+  height: 6rem;
+  align-self: center;
+  position: relative;
+  left: 100%;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
