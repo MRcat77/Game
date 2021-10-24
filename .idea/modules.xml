@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SlideBox.iml" filepath="$PROJECT_DIR$/SlideBox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RecordBeat.iml" filepath="$PROJECT_DIR$/RecordBeat.iml" />
     </modules>
   </component>
 </project>
