@@ -51,4 +51,31 @@
   left: 100%;
 }
 
+#name_box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+#studio_name {
+  content: none;
+}
+
+#name_btn {
+  background: red;
+  border: solid gray 5px;
+  border-radius: 1rem;
+  justify-self: center;
+  align-self: center;
+  width: 6rem;
+  height: 2rem;
+}
+#name_btn :hover {
+  background: black;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -9,14 +9,19 @@
 <body>
 
 <div id="blure">
-    <h2>Whats your profiles name?</h2>
-    <div id="name_box"></div>   
+    <div id="name_box">
+        <h2>Whats your studios name?</h2>
+        <label for="name"></label>
+        <input type="text" id="name">
+        <h2 id="name_msn">That doesn't sound like a very grovy place.<br>You should probably choose a diffrent name for your studio.</h2>
+        <h2 id="name_btn" onclick="setName()" >set name</h2>
+    </div>
 </div>
 
     <div>
         <div id="game">
             <h1 id="counter"></h1>
-            <h3>player name</h3>
+            <h3 id="studio_name"></h3>
             <div id="record" onclick="Point()"></div>
             <div id="bar">
                 <div id="center_beat"></div>

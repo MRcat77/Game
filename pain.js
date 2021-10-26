@@ -1,5 +1,8 @@
 let notes = localStorage['score'] || '0';
 document.querySelector("#counter").textContent = notes;
+let name = localStorage['name'] || 'none';
+document.querySelector("#studio_name").textContent = name;
+
 
 
 let combo = 1;
@@ -32,7 +35,7 @@ function clear()
     document.querySelector("#counter").textContent = notes;
 }
 
-let elem = document.getElementById("beat");
+let elem = document.querySelector("#beat");
 let left = 100;
 let id = setInterval(frame, 35);
 
@@ -47,12 +50,24 @@ function frame() {
     }
 }
 
+let time = setInterval(popup, 10);
 function popup()
 {
-    document.querySelector("#blur").style.display="none";
+    if(name === ""){
+        document.querySelector("#blur").style.display="none";
+    }else{
+        document.querySelector("#studio_name").textContent = name;
+    }
+
 }
 
 
-// use the left % to check when the player should click the record to get a combo
 
 
+function setName(){
+    document.querySelector("#studio_name").innerHTML = document.querySelector("#name").value;
+    name = document.querySelector("#name").value;
+
+    localStorage['name'] = name;
+    document.querySelector("#studio_name").textContent = name;
+}
