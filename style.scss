@@ -19,8 +19,7 @@
 
 #record
 {
-  background-color: gray;
-  border-radius: 1000rem;
+  image-rendering: crisp-edges;
   width: 40rem;
   height: 40rem;
   margin: 5rem;
@@ -69,14 +68,10 @@
 //backrun på popup
 #blure
 {
-
-}
-
-//selve popup boxes
-#name_box
-{
   position: absolute;
-  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   flex-direction: column;
   justify-content: center;
   justify-items: center;
@@ -84,9 +79,20 @@
   align-content: center;
 }
 
-#name
-{
 
+
+#name_box
+{
+  background: lightgray;
+  border-radius: 2rem;
+  width: 20rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
 }
 
 #studio_name
@@ -96,18 +102,22 @@
 
 #name_btn
 {
+  display: flex;
+  margin: 2rem;
   background: red;
   border: solid gray 5px;
   border-radius: 1rem;
-  justify-self: center;
-  align-self: center;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
   width: 6rem;
   height: 2rem;
 
-      :hover
-      {
-        background: black;
-      }
+
+  &:hover
+  {
+    background: gray;
+  }
 }
 
 

@@ -51,16 +51,12 @@ function frame() {
 }
 
 let time = setInterval(popup, 10);
-function popup()
-{
-    if(name === ""){
-        document.querySelector("#blur").style.display="none";
-    }else{
-        document.querySelector("#studio_name").textContent = name;
+function popup() {
+    if (name === "") {
+        document.querySelector("#blur").style.opacity = "1";
+    } else {
     }
-
 }
-
 
 
 

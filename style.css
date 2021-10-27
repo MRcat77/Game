@@ -14,8 +14,7 @@
 }
 
 #record {
-  background-color: gray;
-  border-radius: 1000rem;
+  image-rendering: crisp-edges;
   width: 40rem;
   height: 40rem;
   margin: 5rem;
@@ -51,8 +50,23 @@
   left: 100%;
 }
 
-#name_box {
+#blure {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+#name_box {
+  background: lightgray;
+  border-radius: 2rem;
+  width: 20rem;
+  height: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,16 +80,19 @@
 }
 
 #name_btn {
+  display: flex;
+  margin: 2rem;
   background: red;
   border: solid gray 5px;
   border-radius: 1rem;
-  justify-self: center;
-  align-self: center;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
   width: 6rem;
   height: 2rem;
 }
-#name_btn :hover {
-  background: black;
+#name_btn:hover {
+  background: gray;
 }
 
 /*# sourceMappingURL=style.css.map */
