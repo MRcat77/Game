@@ -1,6 +1,6 @@
 let notes = localStorage['score'] || '0';
 document.querySelector("#counter").textContent = notes;
-let name = localStorage['name'] || 'none';
+let name = localStorage['name'] || '';
 document.querySelector("#studio_name").textContent = name;
 
 
@@ -24,15 +24,17 @@ function Point()
     localStorage['score'] = notes; // only strings
     document.querySelector("#counter").textContent = notes;
 
-    //console.log(notes);
-    //console.log(combo);
+    console.log(notes);
+    console.log(combo);
 }
 
 function clear()
 {
+    name = "none";
     notes = 0;
     combo = 0;
     document.querySelector("#counter").textContent = notes;
+    document.querySelector("#studio_name").textContent = name;
 }
 
 let elem = document.querySelector("#beat");
@@ -50,15 +52,28 @@ function frame() {
     }
 }
 
-let time = setInterval(popup, 10);
-function popup() {
+
+
+window.onload = function popup() {
     if (name === "") {
-        document.querySelector("#blur").style.opacity = "1";
+        openName();
     } else {
     }
 }
 
+function closeName(){
+    document.querySelector("#blur").style.opacity = "0";
+    document.querySelector("#blur").style.zIndex = "-1";
+    document.querySelector("#name_box").style.opacity = "0";
+    document.querySelector("#name_box").style.zIndex = "-2";
+}
 
+function openName(){
+    document.querySelector("#blur").style.opacity = "1";
+    document.querySelector("#blur").style.zIndex = "10";
+    document.querySelector("#name_box").style.opacity = "1";
+    document.querySelector("#name_box").style.zIndex = "11";
+}
 
 function setName(){
     document.querySelector("#studio_name").innerHTML = document.querySelector("#name").value;
@@ -66,4 +81,13 @@ function setName(){
 
     localStorage['name'] = name;
     document.querySelector("#studio_name").textContent = name;
+
+    if (name === "") {
+        document.querySelector("#name_missing").style.opacity = "1";
+        document.querySelector("#name_missing").style.height = "auto";
+    }else {
+        closeName();
+        document.querySelector("#name_missing").style.opacity = "0";
+        document.querySelector("#name_missing").style.height = "0";
+    }
 }

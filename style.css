@@ -50,23 +50,26 @@
   left: 100%;
 }
 
-#blure {
+#blur {
+  opacity: 0;
+  z-index: -1;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
+  backdrop-filter: blur(3rem);
+  width: 100%;
+  height: 120%;
 }
 
 #name_box {
+  opacity: 0;
+  z-index: -2;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  top: 50%;
   background: lightgray;
   border-radius: 2rem;
-  width: 20rem;
-  height: 10rem;
+  width: 40rem;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,6 +96,18 @@
 }
 #name_btn:hover {
   background: gray;
+}
+
+#name {
+  margin: 2rem;
+}
+
+#name_missing {
+  margin: 0;
+  text-align: center;
+  display: flex;
+  opacity: 0;
+  height: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
