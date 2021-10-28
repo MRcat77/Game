@@ -11,11 +11,18 @@ let limit = 5;
 function Point()
 {
     if(combo === limit){
-        combo = 5;
-        notes = combo + notes;
+        if(left >= 45 && left <= 55){
+            combo = 5;
+            notes = combo + notes;
+            left = 0;
+        }else{
+            combo = 1;
+            notes = combo + notes;
+        }
     }else if (left >= 45 && left <= 55){
         combo = combo + 1;
         notes = combo + notes++;
+        left = 0;
     }else {
         combo = 1;
         notes++;
@@ -37,18 +44,18 @@ function clear()
     document.querySelector("#studio_name").textContent = name;
 }
 
-let elem = document.querySelector("#beat");
+let beat = document.querySelector("#beat");
 let left = 100;
 let id = setInterval(frame, 35);
 
 function frame() {
     if (left === 0) {
-        elem.style.left = 100 + "%";
+        beat.style.left = 100 + "%";
         left = 100;
         frame();
     } else {
         left--;
-        elem.style.left = left + "%";
+        beat.style.left = left + "%";
     }
 }
 
