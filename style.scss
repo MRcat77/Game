@@ -1,33 +1,57 @@
 /*
   singe use
-    1.1 Main Game
+    1.1 Clicker Game
     1.2 Beat bar
-
+    1.3 Record discs
+    1.4 Upgrades & Items
+    1.5 Name popup
 
 */
 
-// 1.1 Main Game
+// 1.1 clicker Game
 
 #game
+{
+display: flex;
+}
+
+#clicker
 {
   display: flex;
   flex-direction: column;
   background-color: lime;
   align-items: center;
   padding: 4rem;
+  width: 65rem;
+  height: 48rem;
 }
 
 #record
 {
   image-rendering: crisp-edges;
-  width: 40rem;
-  height: 40rem;
+  width: 30rem;
+  height: 30rem;
   margin: 5rem;
+}
+
+#numbers
+{
+  content: none;
+  margin: 0;
 }
 
 #counter
 {
-  content: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img
+  {
+    width: 1rem;
+    height: 1rem;
+    margin: 1rem;
+  }
 }
 
 //1.2 Beat bar
@@ -36,20 +60,18 @@
 {
   display: flex;
   background: gray;
-  width: 75rem;
-  height: 5rem;
+  width: 65rem;
+  height: 2rem;
 }
 
 #center_beat
 {
   background: yellow;
-  width: 4vw;
-  height: 8rem;
+  width: 3rem;
+  height: 6rem;
   align-self: center;
   position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-
+  left: 30%;
 }
 
 #beat
@@ -63,17 +85,59 @@
 
 }
 
-//1.3 Name
+//1.3 Record discs
 
-//backrun på popup
+#discs
+{
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  text-align: center;
+}
+
+#disc
+{
+  width: 8rem;
+  height: 8rem;
+  image-rendering: crisp-edges;
+}
+
+#buy_disc
+{
+  background: red;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 2rem;
+  backdrop-filter: grayscale(75%);
+  height: 10rem;
+  width: 100rem;
+
+}
+
+#disc_text
+{
+
+}
+
+//1.4 Upgrades & Items
+
+#upgrades
+{
+  display: flex;
+  
+}
+
+//1.5 Name popup
+
+//background på popup
 #blur
 {
   opacity: 0;
   z-index: -1;
   position: absolute;
   backdrop-filter: blur(3rem);
-  width: 100%;
-  height: 120%;
+  inset: 0;
 }
 
 #name_box
@@ -83,7 +147,7 @@
   position: absolute;
   transform: translate(-50%);
   left: 50%;
-  top: 50%;
+  top: 30%;
   background: lightgray;
   border-radius: 2rem;
   width: 40rem;
@@ -91,9 +155,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-items: center;
   align-items: center;
-  align-content: center;
 }
 
 #studio_name
@@ -134,5 +196,3 @@
   opacity: 0;
   height: 0;
 }
-
-//note: use bacround filter when u are making the custom username pop up box

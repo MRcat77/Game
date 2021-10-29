@@ -1,5 +1,5 @@
 let notes = localStorage['score'] || '0';
-document.querySelector("#counter").textContent = notes;
+document.querySelector("#numbers").textContent = notes;
 let name = localStorage['name'] || '';
 document.querySelector("#studio_name").textContent = name;
 
@@ -29,7 +29,7 @@ function Point()
     }
 
     localStorage['score'] = notes; // only strings
-    document.querySelector("#counter").textContent = notes;
+    document.querySelector("#numbers").textContent = notes;
 
     console.log(notes);
     console.log(combo);
@@ -40,7 +40,7 @@ function clear()
     name = "none";
     notes = 0;
     combo = 0;
-    document.querySelector("#counter").textContent = notes;
+    document.querySelector("#numbers").textContent = notes;
     document.querySelector("#studio_name").textContent = name;
 }
 
