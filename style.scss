@@ -90,34 +90,40 @@ display: flex;
 #discs
 {
   display: flex;
-  width: 10rem;
-  height: 10rem;
   text-align: center;
+  background: purple;
+  width: 45rem;
+  height: 16rem;
+  overflow-x: scroll;
 }
 
-#disc
+.disc
 {
   width: 8rem;
   height: 8rem;
   image-rendering: crisp-edges;
 }
 
-#buy_disc
+.buy_disc
 {
   background: red;
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin: 2rem;
-  backdrop-filter: grayscale(75%);
-  height: 10rem;
-  width: 100rem;
+  margin: 1rem;
+  padding: 1rem;
+
 
 }
 
-#disc_text
+.disc_text
 {
+margin: 0.5rem;
+}
 
+.disc_price
+{
+margin: 0.5rem;
 }
 
 //1.4 Upgrades & Items
