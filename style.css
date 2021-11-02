@@ -25,7 +25,7 @@
   image-rendering: crisp-edges;
   width: 30rem;
   height: 30rem;
-  margin: 5rem;
+  margin: 5rem 5rem 3rem 5rem;
 }
 
 #numbers {
@@ -44,6 +44,10 @@
   margin: 1rem;
 }
 
+#combo {
+  margin: 0 0 3rem;
+}
+
 #bar {
   display: flex;
   background: gray;
@@ -57,7 +61,7 @@
   height: 6rem;
   align-self: center;
   position: absolute;
-  left: 30%;
+  left: 29.6%;
 }
 
 #beat {
@@ -73,8 +77,8 @@
   display: flex;
   text-align: center;
   background: purple;
-  width: 45rem;
-  height: 16rem;
+  width: 46rem;
+  height: 17rem;
   overflow-x: scroll;
 }
 
@@ -84,8 +88,32 @@
   image-rendering: crisp-edges;
 }
 
+#red_text {
+  opacity: 0;
+}
+
+#green_disc {
+  filter: hue-rotate(140deg);
+}
+
+#blue_disc {
+  filter: hue-rotate(240deg);
+}
+
+#pink_disc {
+  filter: hue-rotate(310deg);
+}
+
+#gray_disc {
+  filter: grayscale(100%);
+}
+
+#broken_disc {
+  filter: invert(75%);
+}
+
 .buy_disc {
-  background: red;
+  background: rgba(0, 255, 255, 0.3);
   display: flex;
   flex-direction: column;
   align-content: center;

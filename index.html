@@ -27,6 +27,7 @@
             </div>
             <div id="studio_name" onclick="openName()"></div>
             <img src="assets/disc.png" id="record"  onclick="Point()" alt="disc">
+            <h1 id="combo">1X</h1>
             <div id="bar">
                 <div id="center_beat"></div>
                 <div id="beat"></div>
@@ -35,29 +36,34 @@
         <div id="upgrades">
             <div id="discs">
                 <div class="buy_disc">
-                    <h3 class="disc_text">Green disc</h3>
+                    <h3 class="disc_text">Red Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc">
-                    <h3 class="disc_price"><img src="assets/note.png" alt="note">500<img src="assets/note.png" alt="note"></h3>
+                    <h3 class="disc_price" id="red_text"><img src="assets/note.png" alt="note">Soni801<img src="assets/note.png" alt="note"></h3>
+                </div>
+                <div class="buy_disc" onclick="green()">
+                    <h3 class="disc_text">Green Record</h3>
+                    <img src="assets/disc.png" alt="disk" class="disc" id="green_disc">
+                    <h3 class="disc_price" id="green_text"><img src="assets/note.png" alt="note">6000<img src="assets/note.png" alt="note"></h3>
+                </div>
+                <div class="buy_disc" onclick="blue()">
+                    <h3 class="disc_text">Blue Record</h3>
+                    <img src="assets/disc.png" alt="disk" class="disc" id="blue_disc">
+                    <h3 class="disc_price" id="blue_text"><img src="assets/note.png" alt="note">16000<img src="assets/note.png" alt="note"></h3>
+                </div>
+                <div class="buy_disc" onclick="pink()">
+                    <h3 class="disc_text">Pink Record</h3>
+                    <img src="assets/disc.png" alt="disk" class="disc" id="pink_disc">
+                    <h3 class="disc_price" id="pink_text"><img src="assets/note.png" alt="note">44000<img src="assets/note.png" alt="note"></h3>
                 </div>
                 <div class="buy_disc">
-                    <h3 class="disc_text">Green disc</h3>
-                    <img src="assets/disc.png" alt="disk" class="disc">
-                    <h3 class="disc_price"><img src="assets/note.png" alt="note">500<img src="assets/note.png" alt="note"></h3>
+                    <h3 class="disc_text">Gray Record</h3>
+                    <img src="assets/disc.png" alt="disk" class="disc" id="gray_disc">
+                    <h3 class="disc_price" id="gray_text"><img src="assets/note.png" alt="note">360000<img src="assets/note.png" alt="note"></h3>
                 </div>
                 <div class="buy_disc">
-                    <h3 class="disc_text">Green disc</h3>
-                    <img src="assets/disc.png" alt="disk" class="disc">
-                    <h3 class="disc_price"><img src="assets/note.png" alt="note">500<img src="assets/note.png" alt="note"></h3>
-                </div>
-                <div class="buy_disc">
-                    <h3 class="disc_text">Green disc</h3>
-                    <img src="assets/disc.png" alt="disk" class="disc">
-                    <h3 class="disc_price"><img src="assets/note.png" alt="note">500<img src="assets/note.png" alt="note"></h3>
-                </div>
-                <div class="buy_disc">
-                    <h3 class="disc_text">Green disc</h3>
-                    <img src="assets/disc.png" alt="disk" class="disc">
-                    <h3 class="disc_price"><img src="assets/note.png" alt="note">500<img src="assets/note.png" alt="note"></h3>
+                    <h3 class="disc_text">Broken Record</h3>
+                    <img src="assets/disc.png" alt="disk" class="disc" id="broken_disc">
+                    <h3 class="disc_price" id="broken_text"><img src="assets/note.png" alt="note">999999<img src="assets/note.png" alt="note"></h3>
                 </div>
             </div>
             <div>
