@@ -19,11 +19,11 @@ display: flex;
 {
   display: flex;
   flex-direction: column;
-  background-color: lime;
+  background-color: #555;
   align-items: center;
   padding: 4rem;
   width: 65rem;
-  height: 48rem;
+  height: 48.5rem;
 }
 
 #record
@@ -71,7 +71,7 @@ margin: 0 0 3rem;
 
 #center_beat
 {
-  background: yellow;
+  background: darkblue;
   width: 3rem;
   height: 6rem;
   align-self: center;
@@ -81,7 +81,7 @@ margin: 0 0 3rem;
 
 #beat
 {
-  background: red;
+  background: lightblue;
   width: 2rem;
   height: 6rem;
   align-self: center;
@@ -96,7 +96,7 @@ margin: 0 0 3rem;
 {
   display: flex;
   text-align: center;
-  background: purple;
+  background: gray;
   width: 46rem;
   height: 17rem;
   overflow-x: scroll;
@@ -119,19 +119,9 @@ margin: 0 0 3rem;
   filter: hue-rotate(140deg);
 }
 
-#green_text
-{
-
-}
-
 #blue_disc
 {
   filter: hue-rotate(240deg);
-}
-
-#blue_text
-{
-
 }
 
 #pink_disc
@@ -139,20 +129,9 @@ margin: 0 0 3rem;
   filter: hue-rotate(310deg);
 }
 
-#pink_text
-{
-
-}
-
-
 #gray_disc
 {
   filter: grayscale(100%);
-}
-
-#gray_text
-{
-
 }
 
 #broken_disc
@@ -160,19 +139,12 @@ margin: 0 0 3rem;
   filter: invert(75%);
 }
 
-#broken_text
-{
-
-}
-
-
-
 .buy_disc
 {
-  background: rgba(0, 255, 255, 0.3);
+  background: rgb(155, 164, 164);
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   margin: 1rem;
   padding: 1rem;
 
@@ -182,6 +154,7 @@ margin: 0 0 3rem;
 .disc_text
 {
   margin: 0.5rem;
+  width: 10rem;
 
 }
 
@@ -190,13 +163,49 @@ margin: 0 0 3rem;
 margin: 0.5rem;
 }
 
-
-//1.4 Upgrades & Items
-
 #upgrades
 {
   display: flex;
-  
+  flex-direction: column;
+
+}
+
+//1.4 Upgrades & Items
+#item
+{
+  display: flex;
+  flex-direction: row;
+}
+
+#upgrade
+{
+  display: flex;
+  flex-direction: column;
+  background: #afa7a7;
+  width: 22.5rem;
+  height: 39.5rem;
+  overflow-y: scroll;
+}
+
+.upgrade_box
+{
+  display: flex;
+  background: #7e7e7e;
+  margin: 1rem;
+  height: 7rem;
+}
+
+.upgrade_text_box
+{
+  text-align: center;
+  align-self: center;
+  margin: 1.5rem;
+}
+
+.upgrade_img
+{
+  image-rendering: crisp-edges;
+  margin: .5rem;
 }
 
 //1.5 Name popup
@@ -238,7 +247,7 @@ margin: 0.5rem;
 {
   display: flex;
   margin: 2rem;
-  background: red;
+  background: blue;
   border: solid gray 5px;
   border-radius: 1rem;
   flex-direction: column;
@@ -247,10 +256,10 @@ margin: 0.5rem;
   width: 6rem;
   height: 2rem;
 
-
   &:hover
   {
-    background: gray;
+    background: #6a6aff;
+    border: solid #a1a1a1 5px;
   }
 }
 
