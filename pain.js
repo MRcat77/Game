@@ -249,6 +249,7 @@ function pinkCheck() {
     if (pinkDisc === "true") {
         document.querySelector("#pink_text").style.opacity = "0";
     }
+
 }
 
 function setPink(){
@@ -299,6 +300,7 @@ function setGray(){
     //clearInterval(id);
     //setInterval(frame, speed)
 }
+
 
 ///////////////////////////////
 //    Broken record disk    //
@@ -364,3 +366,5 @@ function whatDisc() {
 
 }
 whatDisc();
+
+
