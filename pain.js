@@ -297,8 +297,7 @@ function setGray(){
     document.querySelector("#record").style.filter = "grayscale(100%)";
     limit = 75;
     speed = 25;
-    //clearInterval(id);
-    //setInterval(frame, speed)
+
 }
 
 
@@ -339,8 +338,7 @@ function setBroken(){
     document.querySelector("#record").style.filter = "invert(75%)";
     limit = 99;
     speed = 10;
-    //clearInterval(id);
-    //setInterval(frame, speed)
+
 }
 
 function whatDisc() {
@@ -363,8 +361,9 @@ function whatDisc() {
     if (activeDisc === '6') {
         setBroken();
     }
-
 }
 whatDisc();
 
+function item_buy(){
 
+}
