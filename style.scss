@@ -238,11 +238,6 @@ margin: 0.5rem;
   align-items: center;
 }
 
-#studio_name
-{
-  content: none;
-}
-
 #name_btn
 {
   display: flex;
@@ -290,6 +285,39 @@ margin: 0.5rem;
 
 .building_box
 {
+  display: flex;
+  flex-direction: row;
   background: #6a6aff;
   width: 100%;
+}
+
+.building_description
+{
+  background: #5353ff;
+  margin: .5rem;
+}
+
+.building_img
+{
+  image-rendering: crisp-edges;
+  width: 4rem;
+  height: 4rem;
+  margin: .5rem .5rem 0;
+}
+
+.building_text
+{
+  margin: .5rem;
+}
+
+.building_price
+{
+  margin: .5rem ;
+}
+
+.building_amount
+{
+  margin: .5rem;
+  display: flex;
+  align-self: flex-end;
 }

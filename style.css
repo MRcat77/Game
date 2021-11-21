@@ -192,10 +192,6 @@
   align-items: center;
 }
 
-#studio_name {
-  content: none;
-}
-
 #name_btn {
   display: flex;
   margin: 2rem;
@@ -233,8 +229,36 @@
 }
 
 .building_box {
+  display: flex;
+  flex-direction: row;
   background: #6a6aff;
   width: 100%;
+}
+
+.building_description {
+  background: #5353ff;
+  margin: 0.5rem;
+}
+
+.building_img {
+  image-rendering: crisp-edges;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem 0.5rem 0;
+}
+
+.building_text {
+  margin: 0.5rem;
+}
+
+.building_price {
+  margin: 0.5rem;
+}
+
+.building_amount {
+  margin: 0.5rem;
+  display: flex;
+  align-self: flex-end;
 }
 
 /*# sourceMappingURL=style.css.map */
