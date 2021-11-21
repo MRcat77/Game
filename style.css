@@ -225,4 +225,16 @@
   height: 0;
 }
 
+#building {
+  width: 23.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.building_box {
+  background: #6a6aff;
+  width: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */

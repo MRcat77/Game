@@ -1,13 +1,3 @@
-let notes = localStorage['score'] || '0';
-document.querySelector("#numbers").textContent = notes;
-let name = localStorage['name'] || '';
-document.querySelector("#studio_name").textContent = name;
-let activeDisc = localStorage['disc'] || '1';
-let greenDisc = localStorage['green'] || 'false';
-let blueDisc = localStorage['blue'] || 'false';
-let pinkDisc = localStorage['pink'] || 'false';
-let grayDisc = localStorage['gray'] || 'false';
-let brokenDisc = localStorage['broken'] || 'false';
 
 
 
@@ -157,7 +147,7 @@ function green() {
             localStorage['green'] = greenDisc;
             setGreen();
             activeDisc = "2";
-            localStorage['disc'] =activeDisc;
+            localStorage['disc'] = activeDisc;
         }
     }
 }
@@ -172,8 +162,6 @@ function setGreen(){
     document.querySelector("#record").style.filter = "hue-rotate(140deg)";
     limit = 15;
     speed = 55;
-    //setInterval(frame, 55);
-
 }
 
 ///////////////////////////////
@@ -214,8 +202,6 @@ function setBlue(){
     document.querySelector("#record").style.filter = "hue-rotate(240deg)";
     limit = 25;
     speed = 45;
-    //clearInterval(id);
-    //setInterval(frame, speed)
 }
 
 ///////////////////////////////
@@ -256,8 +242,6 @@ function setPink(){
     document.querySelector("#record").style.filter = "hue-rotate(310deg)";
     limit = 50;
     speed = 35;
-    //clearInterval(id);
-    //setInterval(frame, speed)
 }
 
 ///////////////////////////////
@@ -297,7 +281,6 @@ function setGray(){
     document.querySelector("#record").style.filter = "grayscale(100%)";
     limit = 75;
     speed = 25;
-
 }
 
 

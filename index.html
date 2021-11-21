@@ -38,29 +38,29 @@
                 <div class="buy_disc" onclick="red()">
                     <h3 class="disc_text">Red Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc">
-                    <h3 class="disc_price" id="red_text"><img src="assets/note.png" alt="note">Soni801<img src="assets/note.png" alt="note"></h3>
+                    <h3 class="disc_price" id="red_text"><img src="assets/note.png" alt="note">Soni was here<img src="assets/note.png" alt="note"></h3>
                 </div>
-                <div class="buy_disc" onclick="green()">
+                <div class="buy_disc" onclick="disc(greenDisc, 2, 6000, '#green_text', 'green', 'hue-rotate(140deg)', 15, 55)">
                     <h3 class="disc_text">Green Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc" id="green_disc">
                     <h3 class="disc_price" id="green_text"><img src="assets/note.png" alt="note">6000<img src="assets/note.png" alt="note"></h3>
                 </div>
-                <div class="buy_disc" onclick="blue()">
+                <div class="buy_disc" onclick="disc(blueDisc, 3, 16000, '#blue_text', 'blue', 'hue-rotate(240deg)', 25, 45)">
                     <h3 class="disc_text">Blue Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc" id="blue_disc">
                     <h3 class="disc_price" id="blue_text"><img src="assets/note.png" alt="note">16000<img src="assets/note.png" alt="note"></h3>
                 </div>
-                <div class="buy_disc" onclick="pink()">
+                <div class="buy_disc" onclick="disc(pinkDisc, 4, 44000, '#pink_text', 'pink', 'hue-rotate(310deg)', 50, 35)">
                     <h3 class="disc_text">Pink Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc" id="pink_disc">
                     <h3 class="disc_price" id="pink_text"><img src="assets/note.png" alt="note">44000<img src="assets/note.png" alt="note"></h3>
                 </div>
-                <div class="buy_disc" onclick="gray()">
+                <div class="buy_disc" onclick="disc(grayDisc, 5, 260000, '#gray_text', 'gray', 'grayscale(100%)', 75, 25)">
                     <h3 class="disc_text">Gray Record </h3>
                     <img src="assets/disc.png" alt="disk" class="disc" id="gray_disc">
-                    <h3 class="disc_price" id="gray_text"><img src="assets/note.png" alt="note">360000<img src="assets/note.png" alt="note"></h3>
+                    <h3 class="disc_price" id="gray_text"><img src="assets/note.png" alt="note">260000<img src="assets/note.png" alt="note"></h3>
                 </div>
-                <div id="broken" class="buy_disc" onclick="broken()">
+                <div id="broken" class="buy_disc" onclick="disc(brokenDisc, 6, 999999, '#broken_text', 'broken', 'invert(75%)', 99, 10)">
                     <h3 class="disc_text">Broken Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc" id="broken_disc">
                     <h3 class="disc_price" id="broken_text"><img src="assets/note.png" alt="note">999999<img src="assets/note.png" alt="note"></h3>
@@ -98,6 +98,16 @@
                     </div>
                 </div>
                 <div id="building">
+                    <div class="building_box">
+                        <div class="building_description">
+                            <img src="assets/studio_contract.png" alt="equipment" class="building_img">
+                            <h4 class="upgrade_text">microphone</h4>
+                            <h4 class="upgrade_price"><img src="assets/note.png" alt="note">50000<img src="assets/note.png" alt="note"></h4>
+                        </div>
+                        <div class="amount">
+
+                        </div>
+                    </div>
                     <div id="mics">
                         notes per click
                     </div>
@@ -117,7 +127,7 @@
 
 </body>
 
-<script type="text/javascript" src="pain.js"></script>
+<script type="text/javascript" src="pain V2.js"></script>
 
 </html>
 

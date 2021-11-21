@@ -276,3 +276,20 @@ margin: 0.5rem;
   opacity: 0;
   height: 0;
 }
+
+// Buildings
+
+#building
+{
+  width: 23.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+}
+
+.building_box
+{
+  background: #6a6aff;
+  width: 100%;
+}
