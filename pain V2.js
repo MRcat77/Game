@@ -138,9 +138,9 @@ All this is used to check which disc you are selecting or trying to buy
 */
 function disc(discColor, discNumber, price, discText, color, hue, discLimit, discSpeed){
 
-    //when the player presses again on a disc that they have bought before reloading the page they lose the amount the disk costs
+    discColor = localStorage[color];
 
-    if(discColor === "true"){
+    if(discColor === 'true'){
         activeDisc = discNumber;
         localStorage['disc'] = activeDisc;
         setDisc(hue, discLimit, discSpeed);
@@ -151,7 +151,7 @@ function disc(discColor, discNumber, price, discText, color, hue, discLimit, dis
             localStorage['score'] = notes;
             document.querySelector("#numbers").textContent = notes;
             document.querySelector(discText).style.opacity = "0";
-            discColor = "true";
+            discColor = 'true';
             localStorage[color] = discColor;
             setDisc(hue, discLimit, discSpeed)
             activeDisc = discNumber;
