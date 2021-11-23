@@ -13,7 +13,7 @@
         <div id="name_box">
             <h2>Whats your studios name?</h2>
             <label for="name"></label>
-            <input type="text" id="name">
+            <label for="set_name"></label><input maxlength="20" id="set_name">
             <h3 id="name_missing">That doesn't sound like a very grovy place.<br>You should probably choose a diffrent name for your studio.</h3>
             <h3 id="name_btn" onclick="setName()">Set name</h3>
         </div>
@@ -25,7 +25,7 @@
                 <h1 id="numbers"></h1>
                 <img src="assets/note.png" alt="note">
             </div>
-            <div id="studio_name" onclick="openName()"></div>
+            <div id="name" onclick="openName()"></div>
             <img src="assets/disc.png" id="record"  onclick="Point()" alt="disc">
             <h1 id="combo">1X</h1>
             <div id="bar">
@@ -101,7 +101,7 @@
                     <div class="building_box">
                         <div class="building_description">
                             <img src="assets/studio_contract.png" alt="equipment" class="building_img">
-                            <h4 class="building_text">microphone</h4>
+                            <h4 class="building_text">Mic</h4>
                             <h4 class="building_price"><img src="assets/note.png" alt="note">50000<img src="assets/note.png" alt="note"></h4>
                         </div>
                         <div class="building_text_box">

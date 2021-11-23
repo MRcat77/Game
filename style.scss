@@ -1,4 +1,7 @@
-@import "/assets/connection-iii-font/ConnectionIii-Rj3W.ttf";
+@font-face {
+  font-family: 'ConnectionI-II';
+  src: url('/assets/connection-iii-font/ConnectionIii-Rj3W.ttf');
+}
 
 /*
   singe use
@@ -14,7 +17,9 @@
 
 #game
 {
-display: flex;
+  display: flex;
+  font-family: ConnectionI-II, serif;
+  -moz-osx-font-smoothing: grayscale  ;
 }
 
 #clicker
@@ -33,7 +38,7 @@ display: flex;
   image-rendering: crisp-edges;
   width: 30rem;
   height: 30rem;
-  margin: 5rem 5rem 3rem 5rem;
+  margin: 5rem 5rem 1rem 5rem;
 }
 
 #numbers
@@ -47,6 +52,8 @@ display: flex;
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-family: ConnectionI-II, serif;
+  font-size: 2rem;
 
   img
   {
@@ -56,9 +63,15 @@ display: flex;
   }
 }
 
+#name
+{
+
+}
+
 #combo
 {
-margin: 0 0 3rem;
+  margin: 1rem 0 3rem;
+  opacity: 0;
 }
 
 //1.2 Beat bar
@@ -147,7 +160,7 @@ margin: 0 0 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
+  margin: 1rem 0 1rem 1rem;
   padding: 1rem;
 }
 
@@ -191,7 +204,7 @@ margin: 0.5rem;
 {
   display: flex;
   background: #7e7e7e;
-  margin: 1rem;
+  margin: 1rem 1rem 0 1rem;
   height: 7rem;
 }
 
@@ -258,7 +271,7 @@ margin: 0.5rem;
   }
 }
 
-#name
+#set_name
 {
   margin: 2rem;
 }
@@ -293,8 +306,12 @@ margin: 0.5rem;
 
 .building_description
 {
+  display: flex;
+  flex-direction: column;
   background: #5353ff;
   margin: .5rem;
+  width: 8rem;
+  align-items: center;
 }
 
 .building_img
@@ -307,29 +324,31 @@ margin: 0.5rem;
 
 .building_text
 {
-  margin: .5rem;
+  margin: 1rem .5rem .5rem;
+  text-align: center;
 }
 
 .building_price
 {
   margin: .5rem ;
+  text-align: center;
 }
 
 .building_text_box
 {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 18rem;
   justify-content: center;
+  margin: .5rem .5rem .5rem 0;
 }
 
 .building_amount
 {
-
   display: grid;
-  margin: .5rem 0 .5rem 0 ;
+  margin: 2rem -1rem 2rem ;
   width: 14.75rem;
-  height: 3.5rem;
+  height: 2rem;
   justify-content: end;
   align-content: center;
   font-size: 5rem;
@@ -340,10 +359,12 @@ margin: 0.5rem;
 {
   display: grid;
   background: blue;
-  margin: 0 .5rem .5rem 0;
-  padding: .5rem  ;
-  width: 13.75rem;
-  height: 3.5rem;
+  padding: 1rem;
+  width: 12.75rem;
+  height: 2rem;
   justify-content: end;
   align-content: center;
 }
+
+
+// test

@@ -4,7 +4,7 @@ Local storage stuff
 let notes = localStorage['score'] || '0';
 document.querySelector("#numbers").textContent = notes;
 let name = localStorage['name'] || '';
-document.querySelector("#studio_name").textContent = name;
+document.querySelector("#name").textContent = name;
 let activeDisc = localStorage['disc'] || '1';
 let greenDisc = localStorage['green'] || 'false';
 let blueDisc = localStorage['blue'] || 'false';
@@ -31,24 +31,25 @@ function Point()
         }else{
             combo = 1;
             notes = combo + notes++;
+            document.querySelector("#combo").style.opacity = "0";
         }
     }else if (left >= 45 && left <= 55){
         combo = combo + 1;
         notes = combo + notes++;
         left = 100;
+        document.querySelector("#combo").style.opacity = "1";
     }else {
         combo = 1;
         notes++;
+        document.querySelector("#combo").style.opacity = "0";
     }
     localStorage['score'] = notes;
     document.querySelector("#numbers").textContent = notes;
     document.querySelector("#combo").textContent = combo + "X";
-    console.log(notes);
-    console.log(combo);
 }
 
 /*
-This makes the beat bar move
+This makes the beat bar move and display what the combo is
 */
 let beat = document.querySelector("#beat");
 let left = 100;
@@ -60,6 +61,7 @@ function frame() {
         beat.style.left = 100 + "%";
         left = 100;
         document.querySelector("#combo").textContent = combo + "X";
+        document.querySelector("#combo").style.opacity = "0";
     } else {
         left--;
         beat.style.left = left + "%";
@@ -103,11 +105,11 @@ function openName() {
 This is used to set the name of the player
 */
 function setName() {
-    document.querySelector("#studio_name").innerHTML = document.querySelector("#name").value;
-    name = document.querySelector("#name").value;
+    document.querySelector("#name").innerHTML = document.querySelector("#set_name").value;
+    name = document.querySelector("#set_name").value;
 
     localStorage['name'] = name;
-    document.querySelector("#studio_name").textContent = name;
+    document.querySelector("#name").textContent = name;
 
     if (name === "") {
         document.querySelector("#name_missing").style.opacity = "1";
