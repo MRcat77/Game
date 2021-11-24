@@ -214,3 +214,19 @@ whatDisc();
 /* --------------------------------
 Items and buildings buying
  ----------------------------------*/
+
+function upgrade(price, record, item1, item2){
+    if(price <= notes){
+        document.querySelector(item1, item2, item3).style.opacity = 1;
+        document.querySelector(item1, item2, item3).style.zIndex = 10;
+    }else {
+
+    }
+}
+
+function nps(){
+    document.querySelector("#turntable").textContent =
+        document.querySelector("#radio").textContent =
+            document.querySelector("#speaker").textContent =
+                document.querySelector("#album").textContent =
+}
