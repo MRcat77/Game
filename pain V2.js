@@ -215,18 +215,25 @@ whatDisc();
 Items and buildings buying
  ----------------------------------*/
 
-function upgrade(price, record, item1, item2){
+function upgrade(price, item1, item2, item3){
     if(price <= notes){
-        document.querySelector(item1, item2, item3).style.opacity = 1;
-        document.querySelector(item1, item2, item3).style.zIndex = 10;
-    }else {
-
+        buy(item1)
+        buy(item2)
+        buy(item3)
     }
 }
 
-function nps(){
-    document.querySelector("#turntable").textContent =
-        document.querySelector("#radio").textContent =
-            document.querySelector("#speaker").textContent =
-                document.querySelector("#album").textContent =
+function buy(item) {
+    document.querySelector(item).style.opacity = "1";
+    document.querySelector(item).style.zIndex = "10";
 }
+
+
+
+
+//function nps(){
+//    document.querySelector("#turntable").textContent =
+//        document.querySelector("#radio").textContent =
+//            document.querySelector("#speaker").textContent =
+//                document.querySelector("#album").textContent =
+//}
