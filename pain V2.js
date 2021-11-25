@@ -5,12 +5,35 @@ let notes = localStorage['score'] || '0';
 document.querySelector("#numbers").textContent = notes;
 let name = localStorage['name'] || '';
 document.querySelector("#name").textContent = name;
+
+//Discs
 let activeDisc = localStorage['disc'] || '1';
 let greenDisc = localStorage['green'] || 'false';
 let blueDisc = localStorage['blue'] || 'false';
 let pinkDisc = localStorage['pink'] || 'false';
 let grayDisc = localStorage['gray'] || 'false';
 let brokenDisc = localStorage['broken'] || 'false';
+
+let greenUnlocked = localStorage['greenLock'] || 'false';
+let blueUnlocked = localStorage['blueLock'] || 'false';
+let pinkUnlocked = localStorage['pinkLock'] || 'false';
+let grayUnlocked = localStorage['grayLock'] || 'false';
+let brokenUnlocked = localStorage['brokenLock'] || 'false';
+
+//Upgrades
+let garage = localStorage['garage'] || 'false';
+let equipment = localStorage['equipment'] || 'false';
+let equipmentUpgrade = localStorage['e_upgrade'] || 'false';
+let studio = localStorage['studio'] || 'false';
+
+let turntableUnlocked = localStorage['turntableLock'] || 'false';
+let statisticUnlocked = localStorage['statisticLock'] || 'false';
+let radioUnlocked = localStorage['radioLock'] || 'false';
+let speakerUnlocked = localStorage['speakerLock'] || 'false';
+let albumUnlocked = localStorage['albumLock'] || 'false';
+
+
+
 
 /* --------------------------------
 The click function (gives points)
@@ -211,25 +234,34 @@ function whatDisc(){
 }
 whatDisc();
 
+function unlockedDisc(unlockColor, color) {
+    if (unlockColor === "true") {
+        document.querySelector(color).style.opacity = "0";
+        document.querySelector(color).style.zIndex = "10";
+    }
+}
+
 /* --------------------------------
 Items and buildings buying
  ----------------------------------*/
 
-function upgrade(price, item1, item2, item3){
+function upgrade(upgrade, price, item1, local1, item2, local2, item3, local3){
     if(price <= notes){
-        buy(item1)
-        buy(item2)
-        buy(item3)
+        buy(item1, local1)
+        buy(item2, local2)
+        buy(item3, local3)
+        localStorage[upgrade] = "true"
+        document.querySelector(upgrade).style.opacity = "0";
+        document.querySelector(upgrade).style.width = "0";
+        document.querySelector(upgrade).style.height = "0";
     }
 }
 
-function buy(item) {
+function buy(item, store) {
     document.querySelector(item).style.opacity = "1";
     document.querySelector(item).style.zIndex = "10";
+    localStorage[store] = "true";
 }
-
-
-
 
 //function nps(){
 //    document.querySelector("#turntable").textContent =
@@ -237,3 +269,8 @@ function buy(item) {
 //            document.querySelector("#speaker").textContent =
 //                document.querySelector("#album").textContent =
 //}
+
+function EROR() {
+    document.querySelector("#broken").style.opacity = "1";
+    document.querySelector("#broken").style.zIndex = "10";
+}
