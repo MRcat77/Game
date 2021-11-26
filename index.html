@@ -68,28 +68,28 @@
             </div>
             <div id="item">
                 <div id="upgrade">
-                    <div class="upgrade_box" onclick="upgrade('garage', 400, '#green', 'greenLock', '#equipment','equipment', '#studio', 'studio') ">
+                    <div class="upgrade_box" id="garage" onclick="upgrade('#garage', 'garage', 400, '#green', 'greenLock', '#equipment','equipmentLock', '#studio', 'studioLock')">
                         <img src="assets/garage.png" alt="garage_studio" class="upgrade_img">
                         <div class="upgrade_text_box">
                             <h3 class="upgrade_text">Garage studio</h3>
                             <h3 class="upgrade_price"><img src="assets/note.png" alt="note">400<img src="assets/note.png" alt="note"></h3>
                         </div>
                     </div>
-                    <div class="upgrade_box" id="equipment" onclick="upgrade('equipment', 1000, '#blue', 'blueLock', '#turntable', 'turntableUnlocked', '#equipment_upgrade', 'equipment_upgrade')">
+                    <div class="upgrade_box" id="equipment" onclick="upgrade('#equipment', 'equipment', 1000, '#blue', 'blueLock', '#mic', 'micLock', '#equipment_upgrade', 'equipmentUpgradeLock')">
                         <img src="assets/headset.png" alt="equipment" class="upgrade_img">
                         <div class="upgrade_text_box">
                             <h3 class="upgrade_text">Sound equipment</h3>
                             <h3 class="upgrade_price"><img src="assets/note.png" alt="note">1000<img src="assets/note.png" alt="note"></h3>
                         </div>
                     </div>
-                    <div class="upgrade_box" id="equipment_upgrade" onclick="upgrade('e_upgrade', 30000, '#pink', 'pinkLock', '#speaker', 'speakerLock', '#album', 'albumLock')">
+                    <div class="upgrade_box" id="equipment_upgrade" onclick="upgrade('#equipment_upgrade', 'equipment_upgrade', 30000, '#pink', 'pinkLock', '#speaker', 'speakerLock', '#album', 'albumLock')">
                         <img src="assets/mixer.png" alt="equipment" class="upgrade_img">
                         <div class="upgrade_text_box">
                             <h3 class="upgrade_text">Equipment upgrade</h3>
                             <h3 class="upgrade_price"><img src="assets/note.png" alt="note">30000<img src="assets/note.png" alt="note"></h3>
                         </div>
                     </div>
-                    <div class="upgrade_box" id="studio" onclick="upgrade('studio', 50000, '#gary', 'grayLock', '#radio', 'radioLock', '#statistic', 'statisticLock')">
+                    <div class="upgrade_box" id="studio" onclick="upgrade('#studio', 'studio', 50000, '#gary', 'grayLock', '#radio', 'radioLock', '#turtable', 'turntableLock')">
                         <img src="assets/studio_contract.png" alt="Studio" class="upgrade_img">
                         <div class="upgrade_text_box">
                             <h3 class="upgrade_text">Establishing studio</h3>
@@ -98,28 +98,80 @@
                     </div>
                 </div>
                 <div id="building">
-                    <div class="building_box">
+                    <div class="building_box" id="mic" onclick="buildingBuy('#mic_price', '#mic_amount', 'mic', 'micPrice')">
                         <div class="building_description">
                             <img src="assets/studio_contract.png" alt="equipment" class="building_img">
                             <h4 class="building_text">Mic</h4>
-                            <h4 class="building_price"><img src="assets/note.png" alt="note">50000<img src="assets/note.png" alt="note"></h4>
+                            <div class="building_price">
+                                <img src="assets/note.png" alt="note">
+                                <h4 class="building_price" id="mic_price">250</h4>
+                                <img src="assets/note.png" alt="note">
+                            </div>
                         </div>
                         <div class="building_text_box">
-                            <div class="building_amount" id="mic">1</div>
-                            <div class="building_info">building info</div>
+                            <div class="building_amount" id="mic_amount">0</div>
+                            <div class="building_info">Just a good old regular mic.</div>
                         </div>
                     </div>
-                    <div id="mics">
-                        notes per click
+                    <div class="building_box" id="turntable" onclick="buildingBuy('#turntable_price', '#turntable_amount', 'turntable', 'turntablePrice')">
+                        <div class="building_description">
+                            <img src="assets/studio_contract.png" alt="equipment" class="building_img">
+                            <h4 class="building_text">Turntable</h4>
+                            <div class="building_price">
+                                <img src="assets/note.png" alt="note">
+                                <h4 class="building_price" id="turntable_price">750</h4>
+                                <img src="assets/note.png" alt="note">
+                            </div>
+                        </div>
+                        <div class="building_text_box">
+                            <div class="building_amount" id="turntable_amount">0</div>
+                            <div class="building_info">The thing DJs uses.</div>
+                        </div>
                     </div>
-                    <div id="turntables">
-                        speed (makes record spin)
+                    <div class="building_box" id="radio" onclick="buildingBuy('#radio_price', '#radio_amount', 'radio', 'radioPrice')">
+                        <div class="building_description">
+                            <img src="assets/studio_contract.png" alt="equipment" class="building_img">
+                            <h4 class="building_text">Radio</h4>
+                            <div class="building_price">
+                                <img src="assets/note.png" alt="note">
+                                <h4 class="building_price" id="radio_price">1150</h4>
+                                <img src="assets/note.png" alt="note">
+                            </div>
+                        </div>
+                        <div class="building_text_box">
+                            <div class="building_amount" id="radio_amount">0</div>
+                            <div class="building_info">Wait, radio towers still exist?</div>
+                        </div>
                     </div>
-                    <div id="studios">
-
+                    <div class="building_box" id="speaker" onclick="buildingBuy('#speaker_price', '#speaker_amount', 'speaker', 'speakerPrice')">
+                        <div class="building_description">
+                            <img src="assets/studio_contract.png" alt="equipment" class="building_img">
+                            <h4 class="building_text">Speaker</h4>
+                            <div class="building_price">
+                                <img src="assets/note.png" alt="note">
+                                <h4 class="building_price" id="speaker_price">2250</h4>
+                                <img src="assets/note.png" alt="note">
+                            </div>
+                        </div>
+                        <div class="building_text_box">
+                            <div class="building_amount" id="speaker_amount">0</div>
+                            <div class="building_info">More speakers, MORE SOUND!</div>
+                        </div>
                     </div>
-                    <div id="chorus">
-
+                    <div class="building_box" id="album" onclick="buildingBuy('#album_price', '#album_amount', 'album', 'albumPrice')">
+                        <div class="building_description">
+                            <img src="assets/studio_contract.png" alt="equipment" class="building_img">
+                            <h4 class="building_text">Album</h4>
+                            <div class="building_price">
+                                <img src="assets/note.png" alt="note">
+                                <h4 class="building_price" id="album_price">5000</h4>
+                                <img src="assets/note.png" alt="note">
+                            </div>
+                        </div>
+                        <div class="building_text_box">
+                            <div class="building_amount" id="album_amount">0</div>
+                            <div class="building_info">Record an award wining album.</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,7 +204,7 @@ equipment upgrade(more stuf to buy)
 
 establishing studio
 {
-statistics(unlocks combo number, npm(notes per minit) speed, notes per click, ecsetera)
+mic
 radio towers(nps buildings)
 gray record
 }
@@ -182,5 +234,7 @@ updatte bulding texstures depending on theit level
 
 Idea:
 have mulriple beates
+statistics(unlocks combo number, npm(notes per minit) speed, notes per click, ecsetera)
+chorus
 
 -->

@@ -23,16 +23,74 @@ let brokenUnlocked = localStorage['brokenLock'] || 'false';
 //Upgrades
 let garage = localStorage['garage'] || 'false';
 let equipment = localStorage['equipment'] || 'false';
-let equipmentUpgrade = localStorage['e_upgrade'] || 'false';
+let equipmentUpgrade = localStorage['equipment_upgrade'] || 'false';
 let studio = localStorage['studio'] || 'false';
 
+let garageUnlocked = localStorage['garageLock'] || 'false';
+let equipmentUnlocked = localStorage['equipmentLock'] || 'false';
+let equipmentUpgradeUnlocked = localStorage['equipmentUpgradeLock'] || 'false';
+let studioUnlocked = localStorage['studioLock'] || 'false';
+
+let micUnlocked = localStorage['micLock'] || 'false';
 let turntableUnlocked = localStorage['turntableLock'] || 'false';
-let statisticUnlocked = localStorage['statisticLock'] || 'false';
 let radioUnlocked = localStorage['radioLock'] || 'false';
 let speakerUnlocked = localStorage['speakerLock'] || 'false';
 let albumUnlocked = localStorage['albumLock'] || 'false';
 
+let mic =localStorage['mic'] || '0';
+let turntable = localStorage['turntable'] || '0';
+let radio = localStorage['radio'] || '0';
+let speaker = localStorage['speaker'] || '0';
+let album = localStorage['album'] || '0';
 
+let micPrice = localStorage['micPrice'] || '250';
+let turntablePrice = localStorage['turntablePrice'] || '750';
+let radioPrice = localStorage['radioPrice'] || '1150';
+let speakerPrice = localStorage['speakerPrice'] || '2250';
+let albumPrice = localStorage['albumPrice'] || '5000';
+
+/* --------------------------------
+Checks an loads
+ ----------------------------------*/
+
+/*
+This checks of what items has been unlocked
+*/
+function unlocks(upgrade, upgradeLocal){
+    let item = localStorage[upgradeLocal];
+    if(item === "true"){
+        document.querySelector(upgrade).style.opacity = "1";
+        document.querySelector(upgrade).style.zIndex = "10";
+    }
+}
+//upgrades
+unlocks('#garage', 'garageLock');
+unlocks('#equipment', 'equipmentLock');
+unlocks('#equipment_upgrade', 'equipmentUpgradeLock');
+unlocks('#studio', 'studioLock');
+//discs
+unlocks('#green', 'greenLock');
+unlocks('#blue', 'blueLock');
+unlocks('#pink', 'pinkLock');
+unlocks('#gray', 'grayLock');
+unlocks('#broken', 'brokenLock');
+
+
+/*
+This checks of what upgrades hve been bought
+*/
+function upgradeBought(upgrade, upgradeLocal){
+    let item = localStorage[upgradeLocal];
+    if(item === "true"){
+        document.querySelector(upgrade).style.opacity = "0";
+        document.querySelector(upgrade).style.width = "0";
+        document.querySelector(upgrade).style.height = "0";
+    }
+}
+upgradeBought('#garage', 'garage');
+upgradeBought('#equipment', 'equipment');
+upgradeBought('#equipment_upgrade', 'equipmentUpgrade');
+upgradeBought('#studio', 'studio');
 
 
 /* --------------------------------
@@ -195,18 +253,18 @@ function setDisc(setHue, setDiscLimit, setDiscSpeed){
 }
 
 /*
-This checks on start which disc the player has unlocked
+This checks which disc the player has bought
 */
-function Check(checkColor, text) {
+function diskBought(checkColor, text) {
     if (checkColor === "true") {
         document.querySelector(text).style.opacity = "0";
     }
 }
-Check(greenDisc, '#green_text');
-Check(blueDisc, '#blue_text');
-Check(pinkDisc, '#pink_text');
-Check(grayDisc, '#gray_text');
-Check(brokenDisc, '#broken_text');
+diskBought(greenDisc, '#green_text');
+diskBought(blueDisc, '#blue_text');
+diskBought(pinkDisc, '#pink_text');
+diskBought(grayDisc, '#gray_text');
+diskBought(brokenDisc, '#broken_text');
 
 /*
 This checks what the last active disc was and switches to it on start
@@ -242,35 +300,72 @@ function unlockedDisc(unlockColor, color) {
 }
 
 /* --------------------------------
-Items and buildings buying
+Upgrade buying and loading
  ----------------------------------*/
 
-function upgrade(upgrade, price, item1, local1, item2, local2, item3, local3){
-    if(price <= notes){
-        buy(item1, local1)
-        buy(item2, local2)
-        buy(item3, local3)
-        localStorage[upgrade] = "true"
-        document.querySelector(upgrade).style.opacity = "0";
-        document.querySelector(upgrade).style.width = "0";
-        document.querySelector(upgrade).style.height = "0";
+function upgrade(upgrade, upgradeLocal, price, item1, local1, item2, local2, item3, local3){
+   let item = localStorage[upgradeLocal]
+    if(item === "true"){
+    }else{
+        if(price <= notes){
+            notes -= price;
+            localStorage['score'] = notes;
+            document.querySelector("#numbers").textContent = notes;
+            upgradeBuy(item1, local1);
+            upgradeBuy(item2, local2);
+            upgradeBuy(item3, local3);
+            localStorage[upgradeLocal] = "true";
+            upgradeBought(upgrade ,upgradeLocal);
+        }
     }
 }
 
-function buy(item, store) {
+function upgradeBuy(item, local) {
     document.querySelector(item).style.opacity = "1";
-    document.querySelector(item).style.zIndex = "10";
-    localStorage[store] = "true";
+    document.querySelector(item).style.zIndex = "1000";
+    localStorage[local] = "true";
 }
 
-//function nps(){
-//    document.querySelector("#turntable").textContent =
-//        document.querySelector("#radio").textContent =
-//            document.querySelector("#speaker").textContent =
-//                document.querySelector("#album").textContent =
-//}
+/* --------------------------------
+Building checks and buying
+ ----------------------------------*/
 
-function EROR() {
+function nps(){
+
+}
+
+
+
+function buildingBuy(buildingPrice, buildingAmount, buildingLocal, buildingPriceLocal){
+    let amount = localStorage[buildingLocal];
+    let price = localStorage[buildingPriceLocal] ;
+    if(price <= notes){
+        notes -= price;
+        localStorage['score'] = notes;
+        document.querySelector("#numbers").textContent = notes;
+        price = 1.25 * price;
+        price = Math.round(price);
+        localStorage[buildingPriceLocal] = price
+        amount++;
+        localStorage[buildingLocal] = amount;
+        document.querySelector(buildingAmount).textContent = amount;
+        document.querySelector(buildingPrice).textContent = price;
+    }
+}
+
+function buildingLoad(buildingAmount, buildingPrice, buildingAmountLocal, buildingPriceLocal){
+    document.querySelector(buildingAmount).textContent = localStorage[buildingAmountLocal];
+    document.querySelector(buildingPrice).textContent = localStorage[buildingPriceLocal];
+}
+buildingLoad('#mic_amount', '#mic_price', 'mic', 'micPrice')
+buildingLoad('#turntable_amount', '#turntable_price', 'turntable', 'turntablePrice')
+buildingLoad('#radio_amount', '#radio_price', 'radio', 'radioPrice')
+buildingLoad('#speaker_amount', '#speaker_price', 'speaker', 'speakerPrice')
+buildingLoad('#album_amount', '#album_price', 'album', 'albumPrice')
+
+
+function ERROR() {
     document.querySelector("#broken").style.opacity = "1";
     document.querySelector("#broken").style.zIndex = "10";
+    localStorage['brokenLock'] = "true";
 }
