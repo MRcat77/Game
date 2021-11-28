@@ -4,21 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <title>RecordBeat</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!--Connects the CSS dokument to the html dokument-->
+    <link rel="stylesheet" type="text/css" href="game.css">
 
 </head>
 <body>
 
+<!--
+This is the code for the name popup
+-->
     <div id="blur"></div>
         <div id="name_box">
             <h2>Whats your studios name?</h2>
             <label for="name"></label>
             <label for="set_name"></label><input maxlength="20" id="set_name">
-            <h3 id="name_missing">That doesn't sound like a very grovy place.<br>You should probably choose a diffrent name for your studio.</h3>
+            <h3 id="name_missing">That doesn't sound like a very grovy place.<br>You should probably choose a different name for your studio.</h3>
             <h3 id="name_btn" onclick="setName()">Set name</h3>
         </div>
 
-    <div id="game">
+<!--
+This is the code for the main disc, score number, studio name, combo number and combo bar + center beat
+--> <div id="game">
         <div id="clicker">
             <div id="counter">
                 <img src="assets/note.png" alt="note">
@@ -33,63 +40,87 @@
                 <div id="beat"></div>
             </div>
         </div>
-        <div id="upgrades">
+
+<!--
+This is the code for where you can buy all the different discs
+-->     <div id="upgrades">
             <div id="discs">
-                <div class="buy_disc" onclick="red()">
+                <div class="buy_disc" onclick="red()"> <!--This is the default disc and will always be unlocked-->
                     <h3 class="disc_text">Red Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc">
                     <h3 class="disc_price" id="red_text"><img src="assets/note.png" alt="note">Soni was here<img src="assets/note.png" alt="note"></h3>
                 </div>
+
+                <!--Green disc-->
                 <div class="buy_disc" id="green" onclick="disc('greenDisc', 2, 6000, '#green_text', 'green', 'hue-rotate(140deg)', 15, 55)">
                     <h3 class="disc_text">Green Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc" id="green_disc">
                     <h3 class="disc_price" id="green_text"><img src="assets/note.png" alt="note">6000<img src="assets/note.png" alt="note"></h3>
                 </div>
+
+                <!--Blue disc-->
                 <div class="buy_disc" id="blue" onclick="disc('blueDisc', 3, 16000, '#blue_text', 'blue', 'hue-rotate(240deg)', 25, 45)">
                     <h3 class="disc_text">Blue Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc" id="blue_disc">
                     <h3 class="disc_price" id="blue_text"><img src="assets/note.png" alt="note">16000<img src="assets/note.png" alt="note"></h3>
                 </div>
+
+                <!--Pink disc-->
                 <div class="buy_disc" id="pink" onclick="disc('pinkDisc', 4, 44000, '#pink_text', 'pink', 'hue-rotate(310deg)', 50, 35)">
                     <h3 class="disc_text">Pink Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc" id="pink_disc">
                     <h3 class="disc_price" id="pink_text"><img src="assets/note.png" alt="note">44000<img src="assets/note.png" alt="note"></h3>
                 </div>
+
+                <!--Gray disc-->
                 <div class="buy_disc" id="gray" onclick="disc('grayDisc', 5, 260000, '#gray_text', 'gray', 'grayscale(100%)', 75, 25)">
                     <h3 class="disc_text">Gray Record </h3>
                     <img src="assets/disc.png" alt="disk" class="disc" id="gray_disc">
                     <h3 class="disc_price" id="gray_text"><img src="assets/note.png" alt="note">260000<img src="assets/note.png" alt="note"></h3>
                 </div>
+
+                <!--Broken disc-->
                 <div class="buy_disc" id="broken" onclick="disc('brokenDisc', 6, 999999, '#broken_text', 'broken', 'invert(75%)', 99, 10)">
                     <h3 class="disc_text">Broken Record</h3>
                     <img src="assets/disc.png" alt="disk" class="disc" id="broken_disc">
                     <h3 class="disc_price" id="broken_text"><img src="assets/note.png" alt="note">999999<img src="assets/note.png" alt="note"></h3>
                 </div>
             </div>
-            <div id="item">
+
+<!--
+This is the code for where you can buy all the different upgrades
+       <div id="item">
                 <div id="upgrade">
-                    <div class="upgrade_box" id="garage" onclick="upgrade('#garage', 'garage', 400, '#green', 'greenLock', '#equipment','equipmentLock', '#studio', 'studioLock')">
+
+                    Garage upgrade, this unlocks all items listed in the onclick
+                    <div class="upgrade_box" id="garage" onclick="upgrade('#garage', 'garage', 200, '#green', 'greenLock', '#equipment','equipmentLock', '#studio', 'studioLock')">
                         <img src="assets/garage.png" alt="garage_studio" class="upgrade_img">
                         <div class="upgrade_text_box">
                             <h3 class="upgrade_text">Garage studio</h3>
-                            <h3 class="upgrade_price"><img src="assets/note.png" alt="note">400<img src="assets/note.png" alt="note"></h3>
+                            <h3 class="upgrade_price"><img src="assets/note.png" alt="note">200<img src="assets/note.png" alt="note"></h3>
                         </div>
                     </div>
-                    <div class="upgrade_box" id="equipment" onclick="upgrade('#equipment', 'equipment', 1000, '#blue', 'blueLock', '#mic', 'micLock', '#equipment_upgrade', 'equipmentUpgradeLock')">
+
+                   Equipment upgrade, this unlocks all items listed in the onclick
+                    <div class="upgrade_box" id="equipment" onclick="upgrade('#equipment', 'equipment', 2000, '#blue', 'blueLock', '#mic', 'micLock', '#equipment_upgrade', 'equipmentUpgradeLock')">
                         <img src="assets/headset.png" alt="equipment" class="upgrade_img">
                         <div class="upgrade_text_box">
                             <h3 class="upgrade_text">Sound equipment</h3>
-                            <h3 class="upgrade_price"><img src="assets/note.png" alt="note">1000<img src="assets/note.png" alt="note"></h3>
+                            <h3 class="upgrade_price"><img src="assets/note.png" alt="note">2000<img src="assets/note.png" alt="note"></h3>
                         </div>
                     </div>
-                    <div class="upgrade_box" id="equipment_upgrade" onclick="upgrade('#equipment_upgrade', 'equipment_upgrade', 30000, '#pink', 'pinkLock', '#speaker', 'speakerLock', '#album', 'albumLock')">
+
+                    EquipmentUpgrade upgrade, this unlocks all items listed in the onclick
+                    <div class="upgrade_box" id="equipment_upgrade" onclick="upgrade('#equipment_upgrade', 'equipment_upgrade', 15000, '#pink', 'pinkLock', '#speaker', 'speakerLock', '#album', 'albumLock')">
                         <img src="assets/mixer.png" alt="equipment" class="upgrade_img">
                         <div class="upgrade_text_box">
                             <h3 class="upgrade_text">Equipment upgrade</h3>
-                            <h3 class="upgrade_price"><img src="assets/note.png" alt="note">30000<img src="assets/note.png" alt="note"></h3>
+                            <h3 class="upgrade_price"><img src="assets/note.png" alt="note">15000<img src="assets/note.png" alt="note"></h3>
                         </div>
                     </div>
-                    <div class="upgrade_box" id="studio" onclick="upgrade('#studio', 'studio', 50000, '#gary', 'grayLock', '#radio', 'radioLock', '#turtable', 'turntableLock')">
+
+                    Studio upgrade, this unlocks all items listed in the onclick
+                    <div class="upgrade_box" id="studio" onclick="upgrade('#studio', 'studio', 50000, '#gray', 'grayLock', '#radio', 'radioLock', '#turntable', 'turntableLock')">
                         <img src="assets/studio_contract.png" alt="Studio" class="upgrade_img">
                         <div class="upgrade_text_box">
                             <h3 class="upgrade_text">Establishing studio</h3>
@@ -97,7 +128,13 @@
                         </div>
                     </div>
                 </div>
-                <div id="building">
+
+-->
+<!--
+This is the code for where you can buy multiple of difference nps buildings
+-->             <div id="building">
+
+                    <!--Mic building, gives the amount of the building times the js amount-->
                     <div class="building_box" id="mic" onclick="buildingBuy('#mic_price', '#mic_amount', 'mic', 'micPrice')">
                         <div class="building_description">
                             <img src="assets/studio_contract.png" alt="equipment" class="building_img">
@@ -113,6 +150,8 @@
                             <div class="building_info">Just a good old regular mic.</div>
                         </div>
                     </div>
+
+                     <!--Turntable building, gives the amount of the building times the js amount-->
                     <div class="building_box" id="turntable" onclick="buildingBuy('#turntable_price', '#turntable_amount', 'turntable', 'turntablePrice')">
                         <div class="building_description">
                             <img src="assets/studio_contract.png" alt="equipment" class="building_img">
@@ -128,7 +167,9 @@
                             <div class="building_info">The thing DJs uses.</div>
                         </div>
                     </div>
-                    <div class="building_box" id="radio" onclick="buildingBuy('#radio_price', '#radio_amount', 'radio', 'radioPrice')">
+
+                     <!--Radio building, gives the amount of the building times the js amount-->
+                     <div class="building_box" id="radio" onclick="buildingBuy('#radio_price', '#radio_amount', 'radio', 'radioPrice')">
                         <div class="building_description">
                             <img src="assets/studio_contract.png" alt="equipment" class="building_img">
                             <h4 class="building_text">Radio</h4>
@@ -143,6 +184,8 @@
                             <div class="building_info">Wait, radio towers still exist?</div>
                         </div>
                     </div>
+
+                    <!--Speaker building, gives the amount of the building times the js amount-->
                     <div class="building_box" id="speaker" onclick="buildingBuy('#speaker_price', '#speaker_amount', 'speaker', 'speakerPrice')">
                         <div class="building_description">
                             <img src="assets/studio_contract.png" alt="equipment" class="building_img">
@@ -158,6 +201,8 @@
                             <div class="building_info">More speakers, MORE SOUND!</div>
                         </div>
                     </div>
+
+                    <!--Album building, gives the amount of the building times the js amount-->
                     <div class="building_box" id="album" onclick="buildingBuy('#album_price', '#album_amount', 'album', 'albumPrice')">
                         <div class="building_description">
                             <img src="assets/studio_contract.png" alt="equipment" class="building_img">
@@ -180,61 +225,36 @@
 
 </body>
 
+<!--Connects the js skript to the html dokument-->
 <script type="text/javascript" src="pain V2.js"></script>
 
 </html>
 
 <!--
-
-need to do
+Future plans
 _________________________
-Create garage studio
-{
-green record
-sound equipment(unlocks more things to buy)
-establish studio (unlocks name and more things to buy)
+
+turntables(nps+,can increase the combo speed, slider?)
+mic(nps, increases notes per click)
+radio towers(nps , something more?)
+speakers(nps , something more?)
+album(nps , something more?)
+
+
+renovations{
+boost all buildings nps
+can change color schemes
+can change icons for buildings
 }
 
-sound equipments
-{
-blue record
-turntabels(can increase the combo speed)(slider?)
-equipment upgrade(more stuf to buy)
-}
-
-establishing studio
-{
-mic
-radio towers(nps buildings)
-gray record
-}
-
-equipment upgrade
-{
-pink record
-speakers(increases notes per click)
-album(npm building)
-}
-
-renvations{
-bosst for all buildings
-can scahnge color sheme
-can schange icons for buildings
-}
-
-broken record(type eror in the console)
-
-when all the record have been unloked and all upgrades that unlocks upgrades
+when everything is unlocked
 {
 golden record
-golder record award(nps building)
+(album?)golder record award(nps building)
 }
 
-updatte bulding texstures depending on theit level
-
-Idea:
-have mulriple beates
-statistics(unlocks combo number, npm(notes per minit) speed, notes per click, ecsetera)
+Ideas:
+upgrade building textures depending on the building level
+statistics(unlocks combo number, npm speed, notes per click, ext)
 chorus
-
 -->

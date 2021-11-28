@@ -2,6 +2,17 @@
 Local storage stuff
  ----------------------------------*/
 let notes = localStorage['score'] || '0';
+
+function notesCheck(){
+    // Check if notes is invalid
+    if(notes === undefined // Notes has never been set
+        || isNaN(notes)) // Notes is not a number
+    {
+        notes = 0;
+    }
+}
+notesCheck();
+
 document.querySelector("#numbers").textContent = notes;
 let name = localStorage['name'] || '';
 document.querySelector("#name").textContent = name;
@@ -64,7 +75,6 @@ function unlocks(upgrade, upgradeLocal){
     }
 }
 //upgrades
-unlocks('#garage', 'garageLock');
 unlocks('#equipment', 'equipmentLock');
 unlocks('#equipment_upgrade', 'equipmentUpgradeLock');
 unlocks('#studio', 'studioLock');
@@ -89,7 +99,7 @@ function upgradeBought(upgrade, upgradeLocal){
 }
 upgradeBought('#garage', 'garage');
 upgradeBought('#equipment', 'equipment');
-upgradeBought('#equipment_upgrade', 'equipmentUpgrade');
+upgradeBought('#equipment_upgrade', 'equipment_upgrade');
 upgradeBought('#studio', 'studio');
 
 
@@ -149,7 +159,7 @@ function frame() {
     }
     setTimeout(function () {frame()}, speed)
 }
-frame()
+frame();
 
 /* --------------------------------
 Name popup
@@ -243,6 +253,7 @@ function disc(discColor, discNumber, price, discText, color, hue, discLimit, dis
     }
 }
 
+
 /*
 This checks and switches the active disc
 */
@@ -312,8 +323,11 @@ function upgrade(upgrade, upgradeLocal, price, item1, local1, item2, local2, ite
             localStorage['score'] = notes;
             document.querySelector("#numbers").textContent = notes;
             upgradeBuy(item1, local1);
+            console.log(1)
             upgradeBuy(item2, local2);
+            console.log(2)
             upgradeBuy(item3, local3);
+            console.log(3)
             localStorage[upgradeLocal] = "true";
             upgradeBought(upgrade ,upgradeLocal);
         }
@@ -322,7 +336,7 @@ function upgrade(upgrade, upgradeLocal, price, item1, local1, item2, local2, ite
 
 function upgradeBuy(item, local) {
     document.querySelector(item).style.opacity = "1";
-    document.querySelector(item).style.zIndex = "1000";
+    document.querySelector(item).style.zIndex = "10";
     localStorage[local] = "true";
 }
 
@@ -330,22 +344,48 @@ function upgradeBuy(item, local) {
 Building checks and buying
  ----------------------------------*/
 
-function nps(){
-
+/*
+Checks if the building are set as a number when loaded
+*/
+function amountCheck(local){
+    if(undefined === localStorage[local]){
+        localStorage[local] = "0";
+    }
 }
+amountCheck('mic');
+amountCheck('turntable');
+amountCheck('radio');
+amountCheck('speaker');
+amountCheck('album');
 
+/*
+This loads the price and amount of different buildings
+*/
+function buildingLoad(buildingAmount, buildingPrice, buildingAmountLocal, buildingPriceLocal){
+    document.querySelector(buildingAmount).textContent = buildingAmountLocal;
+    document.querySelector(buildingPrice).textContent = buildingPriceLocal;
+}
+buildingLoad('#mic_amount', '#mic_price', mic, micPrice);
+buildingLoad('#turntable_amount', '#turntable_price', turntable, turntablePrice);
+buildingLoad('#radio_amount', '#radio_price', radio, radioPrice);
+buildingLoad('#speaker_amount', '#speaker_price', speaker, speakerPrice);
+buildingLoad('#album_amount', '#album_price', album, albumPrice);
 
-
+/*
+This is used to buy buildings, increase the amount of building the player has and changes the price, plus id stores it
+*/
 function buildingBuy(buildingPrice, buildingAmount, buildingLocal, buildingPriceLocal){
+    localStorage[buildingPriceLocal] = document.querySelector(buildingPrice).textContent;
+    localStorage[buildingLocal] = document.querySelector(buildingAmount).textContent;
     let amount = localStorage[buildingLocal];
-    let price = localStorage[buildingPriceLocal] ;
+    let price = localStorage[buildingPriceLocal];
     if(price <= notes){
         notes -= price;
         localStorage['score'] = notes;
         document.querySelector("#numbers").textContent = notes;
         price = 1.25 * price;
         price = Math.round(price);
-        localStorage[buildingPriceLocal] = price
+        localStorage[buildingPriceLocal] = price;
         amount++;
         localStorage[buildingLocal] = amount;
         document.querySelector(buildingAmount).textContent = amount;
@@ -353,17 +393,42 @@ function buildingBuy(buildingPrice, buildingAmount, buildingLocal, buildingPrice
     }
 }
 
-function buildingLoad(buildingAmount, buildingPrice, buildingAmountLocal, buildingPriceLocal){
-    document.querySelector(buildingAmount).textContent = localStorage[buildingAmountLocal];
-    document.querySelector(buildingPrice).textContent = localStorage[buildingPriceLocal];
+/* --------------------------------
+Notes per second
+ ----------------------------------*/
+
+/*
+This takes the amount of buildings the player has times the number in the equation and adds it to the total score
+*/
+function nps(){
+    let micAmount = localStorage['mic']
+    let micNPS = micAmount * 5
+    let turntableAmount = localStorage['turntable']
+    let turntableNPS = turntableAmount * 10
+    let radioAmount = localStorage['radio']
+    let radioNPS = radioAmount * 100
+    let speakerAmount = localStorage['speaker']
+    let speakerNPS = speakerAmount * 750
+    let albumAmount = localStorage['album']
+    let albumNPS = albumAmount * 1150
+
+    let totalNPS = micNPS + turntableNPS + radioNPS + speakerNPS + albumNPS;
+
+    notes = parseInt(notes) + totalNPS;
+    localStorage['score'] = notes;
+    document.querySelector("#numbers").textContent = notes;
+
+    setTimeout(function () {nps()}, 1000)
 }
-buildingLoad('#mic_amount', '#mic_price', 'mic', 'micPrice')
-buildingLoad('#turntable_amount', '#turntable_price', 'turntable', 'turntablePrice')
-buildingLoad('#radio_amount', '#radio_price', 'radio', 'radioPrice')
-buildingLoad('#speaker_amount', '#speaker_price', 'speaker', 'speakerPrice')
-buildingLoad('#album_amount', '#album_price', 'album', 'albumPrice')
+nps()
 
+/* --------------------------------
+Other
+ ----------------------------------*/
 
+/*
+Used for a secret
+*/
 function ERROR() {
     document.querySelector("#broken").style.opacity = "1";
     document.querySelector("#broken").style.zIndex = "10";
