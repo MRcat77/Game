@@ -70,8 +70,7 @@ This checks of what items has been unlocked
 function unlocks(upgrade, upgradeLocal){
     let item = localStorage[upgradeLocal];
     if(item === "true"){
-        document.querySelector(upgrade).style.opacity = "1";
-        document.querySelector(upgrade).style.zIndex = "10";
+        document.querySelector(upgrade).style.display = "flex";
     }
 }
 //upgrades
@@ -84,7 +83,12 @@ unlocks('#blue', 'blueLock');
 unlocks('#pink', 'pinkLock');
 unlocks('#gray', 'grayLock');
 unlocks('#broken', 'brokenLock');
-
+//buildings
+unlocks('#mic', 'micLock');
+unlocks('#turntable', 'turntableLock');
+unlocks('#radio', 'radioLock');
+unlocks('#speaker', 'speakerLock');
+unlocks('#album', 'albumLock');
 
 /*
 This checks of what upgrades hve been bought
@@ -92,9 +96,7 @@ This checks of what upgrades hve been bought
 function upgradeBought(upgrade, upgradeLocal){
     let item = localStorage[upgradeLocal];
     if(item === "true"){
-        document.querySelector(upgrade).style.opacity = "0";
-        document.querySelector(upgrade).style.width = "0";
-        document.querySelector(upgrade).style.height = "0";
+        document.querySelector(upgrade).style.display = "none";
     }
 }
 upgradeBought('#garage', 'garage');
@@ -303,13 +305,6 @@ function whatDisc(){
 }
 whatDisc();
 
-function unlockedDisc(unlockColor, color) {
-    if (unlockColor === "true") {
-        document.querySelector(color).style.opacity = "0";
-        document.querySelector(color).style.zIndex = "10";
-    }
-}
-
 /* --------------------------------
 Upgrade buying and loading
  ----------------------------------*/
@@ -335,8 +330,7 @@ function upgrade(upgrade, upgradeLocal, price, item1, local1, item2, local2, ite
 }
 
 function upgradeBuy(item, local) {
-    document.querySelector(item).style.opacity = "1";
-    document.querySelector(item).style.zIndex = "10";
+    document.querySelector(item).style.display = "flex";
     localStorage[local] = "true";
 }
 
@@ -430,7 +424,6 @@ Other
 Used for a secret
 */
 function ERROR() {
-    document.querySelector("#broken").style.opacity = "1";
-    document.querySelector("#broken").style.zIndex = "10";
+    document.querySelector("#broken").style.display = "flex";
     localStorage['brokenLock'] = "true";
 }

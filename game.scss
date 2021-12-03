@@ -1,4 +1,5 @@
 
+
 /*0.1 In port*/
 @font-face {
   font-family: 'ConnectionI-II';
@@ -9,9 +10,10 @@
     0.1 In port
   1 Main game
     1.1 Text
-    1.2 Name popup
-    1.3 Disc
-    1.4 Beat bar
+    1.2 scrollbar
+    1.3 Name popup
+    1.4 Disc
+    1.5 Beat bar
   2 Disc buying
     2.1 Record discs
     2.2 Text
@@ -53,7 +55,11 @@
   opacity: 0;
 }
 
-// 1.2 Name popup
+// 1.2 scrollbar
+
+
+
+// 1.3 Name popup
 #blur
 {
   opacity: 0;
@@ -115,7 +121,7 @@
   height: 0;
 }
 
-// 1.3 Disc
+// 1.4 Disc
 #game
 {
   display: flex;
@@ -142,7 +148,7 @@
   margin: 5rem 5rem 1rem 5rem;
 }
 
-//1.4 Beat bar
+//1.5 Beat bar
 #bar
 {
   display: flex;
@@ -228,7 +234,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 0 1rem 1rem;
+  margin: 1rem .5rem 1rem .5rem;
   padding: 1rem;
 }
 
@@ -384,31 +390,65 @@ margin: 0.5rem;
 
 #green
 {
-  z-index: -1;
-  opacity: 0;
+  display: none;
 }
 
 #blue
 {
-  z-index: -1;
-  opacity: 0;
+  display: none;
 }
 
 #pink
 {
-  z-index: -1;
-  opacity: 0;
+  display: none;
 }
 
 #gray
 {
-  z-index: -1;
-  opacity: 0;
+  display: none;
 }
 
 #broken
 {
-  z-index: -1;
-  opacity: 0;
+  display: none;
 }
 
+#equipment
+{
+  display: none;
+}
+
+#equipment_upgrade
+{
+  display: none;
+}
+
+#studio
+{
+  display: none;
+}
+
+#mic
+{
+  display: none;
+}
+
+#turntable
+{
+  display: none;
+}
+
+#radio
+{
+  display: none;
+}
+
+#speaker
+{
+  display: none;
+}
+
+#album
+{
+  display: none;
+}
