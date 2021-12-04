@@ -73,17 +73,17 @@ function unlocks(upgrade, upgradeLocal){
         document.querySelector(upgrade).style.display = "flex";
     }
 }
-//upgrades
+//Upgrades
 unlocks('#equipment', 'equipmentLock');
 unlocks('#equipment_upgrade', 'equipmentUpgradeLock');
 unlocks('#studio', 'studioLock');
-//discs
+//Discs
 unlocks('#green', 'greenLock');
 unlocks('#blue', 'blueLock');
 unlocks('#pink', 'pinkLock');
 unlocks('#gray', 'grayLock');
 unlocks('#broken', 'brokenLock');
-//buildings
+//Buildings
 unlocks('#mic', 'micLock');
 unlocks('#turntable', 'turntableLock');
 unlocks('#radio', 'radioLock');
